@@ -1,4 +1,5 @@
 -- Créer la base de données si elle n'existe pas
+DROP DATABASE PeoplePerTask;
 CREATE DATABASE IF NOT EXISTS PeoplePerTask;
 -- Utilisez la base de données PeoplePerTask
 USE PeoplePerTask;
@@ -28,7 +29,10 @@ CREATE TABLE Categories (
 INSERT INTO Categories (CategoryName)
 VALUES
     ('Design'),
-    ('UI/UX Design');
+    ('UI/UX Design'),
+    ('developpement web full stack'),
+    ('Photographer'),
+    ('Design');
 
 -- Create SubCategories Table
 CREATE TABLE SubCategories (
@@ -48,7 +52,7 @@ VALUES
 CREATE TABLE Projects (
     ProjectID INT AUTO_INCREMENT PRIMARY KEY,
     ProjectTitle VARCHAR(255),
-    Description TEXT,
+    DescriptionProject TEXT,
     CategoryID INT,
     SubCategoryID INT,
     UserID INT,
@@ -58,10 +62,11 @@ CREATE TABLE Projects (
 );
 
 -- Insert Sample Data into Projects Table
-INSERT INTO Projects (ProjectTitle, Description, CategoryID, SubCategoryID, UserID)
+INSERT INTO Projects (ProjectTitle, DescriptionProject, CategoryID, SubCategoryID, UserID)
 VALUES
     ('Web Development Project 1', 'Description for Project 1', 1, 1, 1),
-    ('Graphic Design Project 1', 'Description for Project 1', 2, 2, 2);
+    ('Graphic Design Project 1', 'Description for Project 1', 2, 2, 2),
+    ('Design Project 1', 'Description for Design Project 1', 2, 2, 2);
 
 -- Create Freelancers Table
 CREATE TABLE Freelancers (
