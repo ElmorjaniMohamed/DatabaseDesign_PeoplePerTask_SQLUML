@@ -1,5 +1,4 @@
 -- Créer la base de données si elle n'existe pas
-DROP DATABASE PeoplePerTask;
 CREATE DATABASE IF NOT EXISTS PeoplePerTask;
 -- Utilisez la base de données PeoplePerTask
 USE PeoplePerTask;
