@@ -39,6 +39,8 @@ CREATE TABLE SubCategories (
     SubCategoryName VARCHAR(255),
     CategoryID INT,
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE
 );
 
 -- Insert Sample Data into SubCategories Table

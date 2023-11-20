@@ -26,6 +26,33 @@ GROUP BY CategoryID;*/
 
 /*Max/Min:
 Challenge: Find the project with the longest description length from the 'Projets' table.*/
-SELECT MAX(DescriptionProject) AS theLongestDescriptionLength
-FROM Projects;
+/*SELECT *
+FROM projects
+WHERE LENGTH(DescriptionProject) = (SELECT MAX(LENGTH(DescriptionProject)) FROM projects);*/
+
+/*Like:
+Challenge: Retrieve usernames from the 'Utilisateurs' table where the email address contains 'gmail.com'.*/
+/*SELECT *
+FROM users
+WHERE EmailAddress LIKE '%gmail.com';*/
+
+/*Joins:
+Challenge: Fetch project titles, descriptions, and associated categories from the 'Projets' table joined with the 'Catégories' table.*/
+
+/*SELECT projects.ProjectTitle, projects.DescriptionProject, categories.CategoryName
+FROM projects
+INNER JOIN categories ON projects.CategoryID = categories.CategoryID;*/
+
+/*Views:
+Challenge: Create a view that displays project titles and associated freelancer names from the 'Projets' table and 'Freelances' table.*/
+/*CREATE VIEW DisplayFreelancerViews AS
+SELECT projects.ProjectTitle, freelancers.FreelancerName
+FROM projects
+INNER JOIN freelancers ON projects.FreelancerID = freelancers.FreelancerID;*/
+
+/*Alias:
+Challenge: Display project titles and their corresponding categories, but rename the category column as 'Project_Category'.*/
+SELECT projects.ProjectTitle, categories.CategoryName AS Project_Category
+FROM projects
+INNER JOIN categories ON projects.CategoryID = categories.CategoryID;
 
