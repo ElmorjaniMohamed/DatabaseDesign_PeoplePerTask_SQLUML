@@ -56,3 +56,8 @@ SELECT projects.ProjectTitle, categories.CategoryName AS Project_Category
 FROM projects
 INNER JOIN categories ON projects.CategoryID = categories.CategoryID;
 
+SELECT * FROM users, projects, categories;
+
+SELECT projects.ProjectTitle, users.Username     
+FROM projects, users
+WHERE UserID = (SELECT UserID FROM users WHERE Username = 'Mohamed_tergui');
